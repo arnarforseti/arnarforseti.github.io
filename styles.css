@@ -6,13 +6,22 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-    color: #fff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    color: #fff;
+}
+
+body.light-mode {
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    color: #333;
 }
 
 .container {
@@ -30,6 +39,10 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+body.light-mode .profile-pic {
+    border: 3px solid #333;
+}
+
 h1 {
     font-size: 24px;
     font-weight: 700;
@@ -39,8 +52,39 @@ h1 {
 .bio {
     font-size: 16px;
     font-weight: 300;
+    margin-bottom: 20px;
+}
+
+body.dark-mode .bio {
     color: #ccc;
-    margin-bottom: 30px;
+}
+
+body.light-mode .bio {
+    color: #666;
+}
+
+.theme-btn {
+    padding: 10px 20px;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+body.light-mode .theme-btn {
+    background: #333;
+}
+
+.theme-btn:hover {
+    background: #777;
+}
+
+body.light-mode .theme-btn:hover {
+    background: #555;
 }
 
 .links {
@@ -62,10 +106,23 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+body.light-mode .link-btn {
+    background: #333;
+    color: #fff;
+}
+
 .link-btn:hover {
     background: #f0f0f0;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .link-btn:hover {
+    background: #555;
+}
+
+.link-btn:active {
+    transform: scale(0.95);
 }
 
 .socials {
